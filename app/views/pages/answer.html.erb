@@ -1,0 +1,16 @@
+<%# If the message is I am going to work, the coach will answer Great!
+If the message has a question mark ? at the end, the coach will answer Silly question, get dressed and go to work!.
+Otherwise the coach will answer I don't care, get dressed and go to work! %>
+
+<div class="container mt-4">
+<h1>Here we go</h1>
+<% question = params[:question]%>
+<% if question == "I am going to work" %>
+<p class="text-success"> "Great!"</p>
+<% elsif params[:question][params[:question].length - 1] == "?"%>
+<p class="text-warning">"Silly question, get dressed and go to work!"</p>
+<% else %>
+<p class="text-info">I don't care, get dressed and go to work!</p>
+<% end %>
+<%= link_to "Ask a new question", ask_path %>
+</div>
